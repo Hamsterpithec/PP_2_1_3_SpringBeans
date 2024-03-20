@@ -14,7 +14,6 @@ public class AnimalsCage {
         this.timer = nanoTime;
     }
 
-
     public void whatAnimalSay() {
         System.out.println("Say:");
         System.out.println(dog.toString());
@@ -28,7 +27,8 @@ public class AnimalsCage {
         System.out.println("________________________");
 
     }
-        public Timer getTimer() {
+
+    public Timer getTimer() {
         return timer;
     }
 }
