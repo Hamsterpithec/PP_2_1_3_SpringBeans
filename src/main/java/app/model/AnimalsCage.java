@@ -1,36 +1,34 @@
 package app.model;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AnimalsCage {
-    private final Animal animal1;
-    private final Animal animal2;
-    private final Timer nanoTime;
+    private final Animal dog;
+    private final Animal cat;
+    private final Timer timer;
 
-    public AnimalsCage(@Qualifier("cat") Animal animal1,
-                       @Qualifier("dog") Animal animal2, Timer nanoTime) {
-        this.animal1 = animal1;
-        this.animal2 = animal2;
-        this.nanoTime = nanoTime;
+    public AnimalsCage(Animal dog, Animal cat, Timer nanoTime) {
+        this.dog = dog;
+        this.cat = cat;
+        this.timer = nanoTime;
     }
 
 
     public void whatAnimalSay() {
         System.out.println("Say:");
-        System.out.println(animal1.toString());
+        System.out.println(dog.toString());
         System.out.println("At:");
-        System.out.println(nanoTime.getTime());
+        System.out.println(timer.getTime());
         System.out.println("________________________");
         System.out.println("Say:");
-        System.out.println(animal2.toString());
+        System.out.println(cat.toString());
         System.out.println("At:");
-        System.out.println(nanoTime.getTime());
+        System.out.println(timer.getTime());
         System.out.println("________________________");
 
     }
         public Timer getTimer() {
-        return nanoTime;
+        return timer;
     }
 }
